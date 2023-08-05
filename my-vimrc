@@ -53,6 +53,23 @@ vnoremap <Space> zf
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview"
 
+map <F2> :NERDTreeToggle<CR>
+map <F3> :FindDefinition<CR>
+autocmd VimEnter * NERDTree
+set tags=tags;/
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+let g:clang_library_path='/usr/lib64/llvm/libclang.so'
+ab alog LOG(INFO) << "alog:: ";
+
+fun! ShowFuncName()
+  let lnum = line(".")
+  let col = col(".")
+  echohl ModeMsg
+  echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+  echohl None
+  call search("\\%" . lnum . "l" . "\\%" . col . "c")
+endfun
+map f :call ShowFuncName() <CR>
 if filereadable(expand("~/.vimrc.plug"))
   source ~/.vimrc.plug
 endif

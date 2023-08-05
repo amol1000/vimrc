@@ -1,0 +1,11 @@
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'rip-rip/clang_complete'
+Plug 'ervandew/supertab'
+Plug 'misterbuckley/vim-definitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'scrooloose/syntastic'
+
+call plug#end()
